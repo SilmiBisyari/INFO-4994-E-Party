@@ -16,11 +16,13 @@ class CreateOutfitsTable extends Migration
         Schema::create('outfits', function (Blueprint $table) {
             $table->increments('idoutfit')->primary;
             $table->string('nameoutfit', 50);
-            $table->string('typeofoutfit', 10);
-            $table->string('size', 10);
-            $table->string('colour', 10);
+            $table->string('typeofoutfit', 50);
+            $table->string('size', 50);
+            $table->string('colour', 50);
             $table->double('prices', 4,2);
             $table->timestamps();
+            $table->string('email',30);
+            $table->foreign('email')->references('email')->on('users');
         });
     }
 

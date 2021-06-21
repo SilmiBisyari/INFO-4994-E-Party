@@ -23,6 +23,11 @@ class CreateVenuesTable extends Migration
             $table->double('prices',4,2);
             $table->string('time');
             $table->timestamps();
+            $table->string('email',30);
+            $table->foreign('email')->references('email')->on('users');
+
+            
+            
         });
     }
 

@@ -2,9 +2,18 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <h1> E-Party </h1>
             </a>
         </x-slot>
+
+        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 focus\:bg-pink-800:focus">
+            <div class="backgroundcolorcustomer">
+                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
+                     <div class="border">
+                       <img align="middle" src="{{url('/images/epartylogo.png')}}" alt="Image"/> 
+                    </div>   
+                </div>
+
+            </div>
 
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -51,6 +60,7 @@
                     {{ __('Log in') }}
                 </x-button>
             </div>
+        </div>
         </form>
     </x-auth-card>
 </x-guest-layout>

@@ -22,18 +22,17 @@ Route::get('/booking', function(){
 
     return view('customer/booking');    
 });
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 
-/*vendor*/
 Route::view('/cake', '/vendor/Cake');
 Route::view('/outfit', '/vendor/outfit');
 Route::view('/venue', '/vendor/venue');
 Route::view('/food', '/vendor/food');
+Route::view('/bookingEvents','/customer/booking');
 
 Route::post('/cake', [FormController::class, 'fillcake']);;
 Route::get('/vendor/cakeview', [ViewController::class, 'cakeview']);
@@ -47,8 +46,6 @@ Route::get('/vendor/venueview', [ViewController::class, 'venueview']);
 Route::post('/food', [FormController::class, 'fillfoodbeverages']);
 Route::get('/vendor/foodview', [ViewController::class, 'foodview']);
 
-Route::get('/vendor/vendororder', [ViewController::class, 'allvendorlistorder']);
-
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/dashboard', function () {
         return view('dashboard');
@@ -61,25 +58,8 @@ Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update']
 Route::view('dashboardvendor', '/vendor/dashboardvendor')->name('dashboardvendor');
     //Route::any('/cake', [\App\Http\Controllers\FormController::class, 'fillcake'])->name('FormController.fillcake');
 
-
-//customer 
-Route::post('/booking', [FormController::class, 'booking']);
-Route::get('/booking', [FormController::class, 'bookingselection']);
-
 Route::get('/customer/totalcakeview', [ViewController::class, 'totalcakeview']);
 Route::get('/customer/totaloutfitview', [ViewController::class, 'totaloutfitview']);
-Route::get('/customer/totalvenueview', [ViewController::class, 'totalvenueview']);
-Route::get('/customer/totalfoodview', [ViewController::class, 'totalfoodview']);
-
-Route::get('/customer/bookingview', [ViewController::class, 'bookingview']);
-Route::get('/customer/delete/{idbooking}',[ViewController::class, 'delete']);
-
-
-
-
-
-//Route::get('/customer/totalcakeview', [ViewController::class, 'cakeselection']);
+Route::get('/customer/totalvenueview', [ViewController::class, 'totalvenuetview']);
+Route::get('/customer/totalfoodtview', [ViewController::class, 'totalfoodview']);
 });
-
-
-//Route::get('/customer/totalcakeview', [FormController::class, 'cakeselection']);

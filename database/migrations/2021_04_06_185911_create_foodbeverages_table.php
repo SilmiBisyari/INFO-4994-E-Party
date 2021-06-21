@@ -14,13 +14,15 @@ class CreateFoodbeveragesTable extends Migration
     public function up()
     {
         Schema::create('foodbeverages', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('idfood');
             $table->string('typesfood');
             $table->string('Namefood');
             $table->tinyInteger('participant');
             $table->string('description',150);
             $table->double('prices',4,2);
             $table->timestamps();
+            $table->string('email',30);
+            $table->foreign('email')->references('email')->on('users');
         });
     }
 

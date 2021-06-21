@@ -10,7 +10,7 @@ class outfits extends Model
     
         public $table = "outfits";
         protected $fillable = [
-            'nameoutfit','typeofoutfit','size','colour','prices','updated_at','create_at'
+            'nameoutfit','typeofoutfit','size','colour','prices','updated_at','create_at','email'
         ];
     
 }

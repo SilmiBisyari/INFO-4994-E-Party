@@ -9,7 +9,7 @@ class cake extends Model
 {
     public $table = "cake";
     protected $fillable = [
-		'name', 'type','prices','updated_at','create_at'
+		'namecake', 'typecake','prices','updated_at','create_at','email'
 	];
 }
 

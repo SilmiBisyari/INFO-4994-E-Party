@@ -10,7 +10,7 @@ class foodbeverages extends Model
     
         public $table = "foodbeverages";
         protected $fillable = [
-            'typesfood', 'Namefood','participant','description','prices','updated_at','create_at'
+            'typesfood', 'Namefood','participant','description','prices','updated_at','create_at','email'
         ];
     
 }

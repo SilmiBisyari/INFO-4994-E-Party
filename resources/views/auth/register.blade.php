@@ -1,9 +1,9 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
+            <div class="justify-center sm:justify-start sm:pt-100">
+                       <img align="center" src="{{url('/images/epartylogo.png')}}" alt="Image"/>    
+                </div>
         </x-slot>
 
         <!-- Validation Errors -->
